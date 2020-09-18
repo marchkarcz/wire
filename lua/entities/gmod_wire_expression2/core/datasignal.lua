@@ -378,6 +378,12 @@ e2function entity dsGetSender()
 	return self.data.currentsignal.from
 end
 
+-- Get the E2's owner's information
+e2function entity dsGetSenderIdentity()
+	if not self.data.currentsignal then return end
+	return {getOwner(self,self.data.currentsignal.from)}
+end
+
 -- Get the group which the signal was sent to
 e2function string dsGetGroup()
 	if not self.data.currentsignal then return "" end
